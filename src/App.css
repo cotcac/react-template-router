@@ -21,3 +21,9 @@ footer{
   border-top: 1px solid black;
   background-color:#181818;
 }
+.logo{
+  max-width: 150px;
+}
+header{
+  padding: 5px 10px;
+}

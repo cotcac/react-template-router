@@ -14,13 +14,7 @@ function App() {
         <Nav></Nav>
         <div className="container">
           <div className="row">
-            <Route exact path="/" render={
-              props => (
-                <React.Fragment>
-                  <Home />
-                </React.Fragment>
-              )
-            }></Route>
+            <Route path="/" exact component={Home}></Route>
             <Route path="/about" component={About}></Route>
 
           </div>
