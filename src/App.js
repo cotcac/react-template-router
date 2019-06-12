@@ -12,14 +12,20 @@ function App() {
       <div className="App">
         <Header />
         <Nav></Nav>
-        <Route exact path="/" render={
-          props => (
-            <React.Fragment>
-              <Home />
-            </React.Fragment>
-          )
-        }></Route>
-        <Route path="/about" component={About}></Route>
+        <div className="container">
+          <div className="row">
+            <Route exact path="/" render={
+              props => (
+                <React.Fragment>
+                  <Home />
+                </React.Fragment>
+              )
+            }></Route>
+            <Route path="/about" component={About}></Route>
+
+          </div>
+        </div>
+
         <Footer />
       </div>
 
