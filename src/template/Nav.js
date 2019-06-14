@@ -6,7 +6,7 @@ class Nav extends Component {
             <nav className="navbar navbar-reverse">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <Link className="navbar-brand" to="/">HOME</Link>
+                        <Link className="navbar-brand" to="/">CONTEMI</Link>
                     </div>
                     <ul className="nav navbar-nav">
                         <li> <Link to="/about">About</Link> </li>
