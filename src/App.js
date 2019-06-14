@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
+import Users from './routes/Users';
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Switch>
                   <Route path="/" exact component={Home}></Route>
                   <Route path="/about" component={About}></Route>
+                  <Route path="/users" component={Users}></Route>
                   <Route component={NotFound}></Route>
                 </Switch>
               </div>
