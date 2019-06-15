@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as actionCreator from '../store/actions/usersActions';
+import { Link } from 'react-router-dom';
 class Users extends Component {
  
     render() {
         const Users = this.props.users.map(user =>(
             <div key={user.id}>
+                <Link to={`/users/${user.id}`} >{user.name}</Link>
                 <h3>{user.name}</h3>
             </div>
         ))

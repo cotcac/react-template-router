@@ -27,7 +27,19 @@ export const fetchUsers = () =>{
 
     }
 }
-
+// get user detail.
+export const userDetail = (id) =>{
+    return dispatch => {
+        dispatch(loading());
+        Axios.get(process.env.REACT_APP_BASE_URL + '/users/' + id)
+        .then(users => {
+            dispatch({
+                type:'FETCH_USER_DETAIL',
+                payload: users.data
+            })
+        })
+    }
+}
 export const ageUp = (val) => {
     return dispatch => {
         dispatch(loading());

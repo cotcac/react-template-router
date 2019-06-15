@@ -6,6 +6,7 @@ import './App.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
 import Users from './routes/Users';
+import UserDefail from './routes/UserDefail';
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 function App() {
@@ -20,7 +21,8 @@ function App() {
                 <Switch>
                   <Route path="/" exact component={Home}></Route>
                   <Route path="/about" component={About}></Route>
-                  <Route path="/users" component={Users}></Route>
+                  <Route path="/users" exact component={Users}></Route>
+                  <Route path="/users/:id" exact component={UserDefail}></Route>
                   <Route component={NotFound}></Route>
                 </Switch>
               </div>
