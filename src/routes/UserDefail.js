@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { userDetail } from '../store/actions/usersActions';
+import { fetchOne } from '../store/actions/usersActions';
 class UserDefail extends Component {
     componentWillMount() {
         const userId = this.props.match.params.id;
-        this.props.userDetail(userId);
+        this.props.fetchOne(userId);
+        console.log(this.props);
+        
     }
     render() {
 
@@ -25,4 +27,4 @@ const mapStoreToPros = (store) => {
     }
 }
 
-export default connect(mapStoreToPros, { userDetail })(UserDefail);
+export default connect(mapStoreToPros, { fetchOne })(UserDefail);

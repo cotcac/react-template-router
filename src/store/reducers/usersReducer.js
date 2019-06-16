@@ -8,19 +8,19 @@ const reducer = (state = initialState, action) => {
 
   // your action here
   switch (action.type) {
-    case 'FETCH_USERS':
+    case 'FETCH_ALL':
       return {
         ...state,
         users: action.payload,
         loading: false
       }
-    case 'FETCH_USER_DETAIL':
+    case 'FETCH_ONE':
       return {
         ...state,
         user: action.payload,
         loading: false
       }
-    case 'USER_INSERT':
+    case 'INSERT':
       return {
         ...state,
         user: action.payload,

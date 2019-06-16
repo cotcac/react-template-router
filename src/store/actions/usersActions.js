@@ -14,13 +14,13 @@ export const loading = () => {
     }
 }
 
-export const fetchUsers = () =>{
+export const fetchAll = () =>{
     return dispatch => {
         dispatch(loading());
         Axios.get(process.env.REACT_APP_BASE_URL + '/users')
         .then(users =>{
             dispatch({
-                type:'FETCH_USERS',
+                type:'FETCH_ALL',
                 payload:users.data
             })
         })
@@ -28,26 +28,28 @@ export const fetchUsers = () =>{
     }
 }
 // get user detail.
-export const userDetail = (id) =>{
+export const fetchOne = (id) =>{
+    console.log(id);
+    
     return dispatch => {
         dispatch(loading());
         Axios.get(process.env.REACT_APP_BASE_URL + '/users/' + id)
         .then(users => {
             dispatch({
-                type:'FETCH_USER_DETAIL',
+                type:'FETCH_ONE',
                 payload: users.data
             })
         })
     }
 }
 // INSERT USER
-export const userInsert = (post) =>{
+export const insert = (post) =>{
     return dispatch => {
         dispatch(loading());
         Axios.post(process.env.REACT_APP_BASE_URL + '/users/', post)
         .then(users => {
             dispatch({
-                type:'USER_INSERT',
+                type:'INSERT',
                 payload: users.data
             })
         })

@@ -11,7 +11,7 @@ export const fetchAll = () =>{
         Axios.get(process.env.REACT_APP_BASE_URL + '/posts')
         .then(res =>{
             dispatch({
-                type:'FETCH_POSTS',
+                type:'FETCH_ALL',
                 payload:res.data
             })
         })
@@ -25,7 +25,7 @@ export const fetchOne = (id) =>{
         Axios.get(process.env.REACT_APP_BASE_URL + '/posts/' + id)
         .then(res => {
             dispatch({
-                type:'FETCH_POST_DETAIL',
+                type:'FETCH_ONE',
                 payload: res.data
             })
         })

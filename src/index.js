@@ -13,6 +13,8 @@ const reducers = combineReducers({
     users:usersReducer,
     posts:postsReducer,
 })
+console.log(reducers);
+
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(

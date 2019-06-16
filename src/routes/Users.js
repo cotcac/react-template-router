@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Users extends Component {
 
     componentWillMount() {
-        this.props.fetchUsers()
+        this.props.fetchAll()
     }
  
     render() {
@@ -37,7 +37,7 @@ const mapStoreToPros = (store) =>{
 const mapDispatchToPros = (dispatch) =>{
     return {
         onAgeUp: (val) => dispatch(actionCreator.ageUp(1)),
-        fetchUsers: () => dispatch(actionCreator.fetchUsers())
+        fetchAll: () => dispatch(actionCreator.fetchAll())
     }
   }
 

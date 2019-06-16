@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {userInsert} from '../store/actions/usersActions';
+import {insert} from '../store/actions/usersActions';
 class UserInsert extends Component {
     constructor(props){
         super(props);
@@ -23,7 +23,7 @@ class UserInsert extends Component {
             username: this.state.username,
             email: this.state.email
         }
-        this.props.userInsert(post);
+        this.props.insert(post);
     }
     render() {
         return (
@@ -71,4 +71,4 @@ const mapStoreToPros = (store) => {
         loading: store.users.loading
     }
 }
-export default connect(mapStoreToPros, {userInsert})(UserInsert);
+export default connect(mapStoreToPros, {insert})(UserInsert);

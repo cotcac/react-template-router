@@ -7,19 +7,19 @@ const initialState = {
   
     // your action here
     switch (action.type) {
-      case 'FETCH_POSTS':
+      case 'FETCH_ALL':
         return {
           ...state,
           posts: action.payload,
           loading: false
         }
-      case 'FETCH_POST_DETAIL':
+      case 'FETCH_ONE':
         return {
           ...state,
           user: action.payload,
           loading: false
         }
-      case 'POST_INSERT':
+      case 'INSERT':
         return {
           ...state,
           user: action.payload,
