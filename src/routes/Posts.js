@@ -7,6 +7,11 @@ class Posts extends Component {
         this.props.fetchAll();
     }
     render() {
+
+        
+        if(this.props.posts.error){
+              return <div><p>Error</p></div>;
+        }
         const Posts = this.props.posts.posts.map(e =>(
             <div key={e.id}>
                 <Link to={`/posts/${e.id}`} ><h3>{e.title}g</h3></Link>
@@ -27,6 +32,7 @@ const mapStoreToPros = (store) => {
     return {
         posts: store.posts,
         loading: store.posts.loading,
+
     }
 }
 export default connect(mapStoreToPros,{fetchAll})(Posts);
