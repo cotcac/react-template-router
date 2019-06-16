@@ -40,6 +40,20 @@ export const userDetail = (id) =>{
         })
     }
 }
+// INSERT USER
+export const userInsert = (post) =>{
+    return dispatch => {
+        dispatch(loading());
+        Axios.post(process.env.REACT_APP_BASE_URL + '/users/', post)
+        .then(users => {
+            dispatch({
+                type:'USER_INSERT',
+                payload: users.data
+            })
+        })
+
+    }
+}
 export const ageUp = (val) => {
     return dispatch => {
         dispatch(loading());

@@ -5,12 +5,13 @@ import App from './App';
 // redux
 import {Provider} from 'react-redux';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-import users from './store/reducers/usersReducer';
+import usersReducer from './store/reducers/usersReducer';
+import postsReducer from './store/reducers/postsReducer';
 import thunk from 'redux-thunk';
 console.log(process.env.REACT_APP_BASE_URL,'API_URL');
 const reducers = combineReducers({
-    users:users,
-
+    users:usersReducer,
+    posts:postsReducer,
 })
 const store = createStore(reducers, applyMiddleware(thunk));
 

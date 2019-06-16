@@ -1,7 +1,7 @@
 const initialState = {
   a: 21,
   users: [],
-  user:{},
+  user: {},
 };
 const reducer = (state = initialState, action) => {
   // take the state and base on the action we will change the stage and return.
@@ -15,6 +15,12 @@ const reducer = (state = initialState, action) => {
         loading: false
       }
     case 'FETCH_USER_DETAIL':
+      return {
+        ...state,
+        user: action.payload,
+        loading: false
+      }
+    case 'USER_INSERT':
       return {
         ...state,
         user: action.payload,

@@ -17,6 +17,7 @@ class Users extends Component {
         return (
             <div>
                 <h1>Users</h1>
+                <Link to="/users-insert">Inset</Link>
                 <p>This is users routes</p>
                 <span>A:{this.props.a}</span>
                 <button onClick={()=>{this.props.onAgeUp(2)}}>Age Up</button>

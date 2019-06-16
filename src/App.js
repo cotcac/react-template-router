@@ -5,8 +5,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
-import Users from './routes/Users';
-import UserDefail from './routes/UserDefail';
+
+const Users = lazy(()=> import('./routes/Users'))
+const Posts = lazy(()=> import('./routes/Posts'))
+const UserDefail = lazy(()=> import('./routes/UserDefail'));
+const UserInsert = lazy(()=> import('./routes/UserInsert'));
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 function App() {
@@ -23,6 +26,9 @@ function App() {
                   <Route path="/about" component={About}></Route>
                   <Route path="/users" exact component={Users}></Route>
                   <Route path="/users/:id" exact component={UserDefail}></Route>
+                  <Route path="/users-insert" exact component={UserInsert}></Route>
+                  <Route path="/posts" exact component={Posts}></Route>
+
                   <Route component={NotFound}></Route>
                 </Switch>
               </div>
