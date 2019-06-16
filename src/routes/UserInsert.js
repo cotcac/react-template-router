@@ -68,7 +68,7 @@ const mapStoreToPros = (store) => {
     return {
         users: store.users.users,
         user: store.users.user,
-        loading: store.users.loading
+        loading: store.loading
     }
 }
 export default connect(mapStoreToPros, {insert})(UserInsert);

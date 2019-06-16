@@ -2,13 +2,6 @@ import Axios from "axios";
 import * as actionTypes from './actionTypes';
 // import * as errorHandlerActions from './errorHandlerActions';
 import * as loadingAction from './loadingAction';
-export const ageUpAsync = (val) => {
-    return {
-        type: 'AGE_UP',
-        val
-    }
-}
-
 export const fetchAll = () =>{
     return dispatch => {
         dispatch(loadingAction.loading());
@@ -25,8 +18,6 @@ export const fetchAll = () =>{
 }
 // get user detail.
 export const fetchOne = (id) =>{
-    console.log(id);
-    
     return dispatch => {
         dispatch(loadingAction.loading());
         Axios.get(process.env.REACT_APP_BASE_URL + '/users/' + id)
@@ -57,15 +48,5 @@ export const insert = (post) =>{
         .catch(err =>{
             dispatch(loadingAction.error(err.response.status));
         })
-    }
-}
-export const ageUp = (val) => {
-    return dispatch => {
-        dispatch(loadingAction.loading());
-        setTimeout(() => {
-            dispatch(ageUpAsync(val))
-            dispatch(loadingAction.success());
-        }, 4000);
-        
     }
 }

@@ -1,7 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 const initialState = {
-  a: 21,
-  error:null,
   users: [],
   user: {},
 };
@@ -24,11 +22,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
-      }
-    case 'AGE_UP':
-      return {
-        ...state,
-        a: state.a + 1,
       }
     default:
       return state;

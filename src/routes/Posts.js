@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {fetchAll} from '../store/actions/postsAction';
+import { connect } from 'react-redux'
+import { fetchAll } from '../store/actions/postsAction';
 import { Link } from 'react-router-dom';
+
+import DivWithErrorHandling from '../hoc/DivWithErrorHandling';
 class Posts extends Component {
-    componentWillMount(){
+    componentWillMount() {
         this.props.fetchAll();
     }
     render() {
-        if(this.props.loading.error){
-              return <div><p>Error {this.props.loading.errorStatus}</p></div>;
-        }
-        const Posts = this.props.posts.posts.map(e =>(
+
+        const Posts = this.props.posts.posts.map(e => (
             <div key={e.id}>
-                <Link to={`/posts/${e.id}`} ><h3>{e.title}g</h3></Link>
+                <Link to={`/posts/${e.id}`} ><h3>{e.title}</h3></Link>
                 <p>{e.body}</p>
             </div>
         ))
         return (
             <div>
                 <h1>Posts</h1>
-                {this.props.loading.loading &&  <div>Loading...</div>}
-                {Posts}
+                <DivWithErrorHandling loading={this.props.loading}>
+                    {Posts}
+                </DivWithErrorHandling>
             </div>
         );
     }
@@ -31,4 +32,4 @@ const mapStoreToPros = (store) => {
         loading: store.loading,
     }
 }
-export default connect(mapStoreToPros,{fetchAll})(Posts);
+export default connect(mapStoreToPros, { fetchAll })(Posts);
