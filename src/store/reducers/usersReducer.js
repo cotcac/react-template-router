@@ -13,30 +13,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         users: action.payload,
-        loading: false
       }
     case 'FETCH_ONE':
       return {
         ...state,
         user: action.payload,
-        loading: false
       }
     case 'INSERT':
       return {
         ...state,
         user: action.payload,
-        loading:false
       }
     case 'AGE_UP':
       return {
         ...state,
         a: state.a + 1,
-        loading: false
-      }
-    case 'LOADING':
-      return {
-        ...state,
-        loading: true
       }
     default:
       return state;

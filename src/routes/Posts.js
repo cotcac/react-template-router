@@ -7,10 +7,8 @@ class Posts extends Component {
         this.props.fetchAll();
     }
     render() {
-
-        
-        if(this.props.posts.error){
-              return <div><p>Error</p></div>;
+        if(this.props.loading.error){
+              return <div><p>Error {this.props.loading.errorStatus}</p></div>;
         }
         const Posts = this.props.posts.posts.map(e =>(
             <div key={e.id}>
@@ -28,11 +26,9 @@ class Posts extends Component {
     }
 }
 const mapStoreToPros = (store) => {
-    console.log(store);
     return {
         posts: store.posts,
-        loading: store.posts.loading,
-
+        loading: store.loading,
     }
 }
 export default connect(mapStoreToPros,{fetchAll})(Posts);

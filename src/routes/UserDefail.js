@@ -6,9 +6,12 @@ class UserDefail extends Component {
         const userId = this.props.match.params.id;
         this.props.fetchOne(userId);
         console.log(this.props);
-        
+
     }
     render() {
+        if (this.props.loading.error) {
+            return <div><p>Something wrong!</p></div>;
+        }
 
         return (
             <div>
@@ -21,9 +24,8 @@ class UserDefail extends Component {
 const mapStoreToPros = (store) => {
     console.log(store);
     return {
-        users: store.users.users,
         user: store.users.user,
-        loading: store.users.loading
+        loading: store.loading
     }
 }
 

@@ -21,17 +21,21 @@ class Users extends Component {
                 <p>This is users routes</p>
                 <span>A:{this.props.a}</span>
                 <button onClick={()=>{this.props.onAgeUp(2)}}>Age Up</button>
-                {this.props.loading &&  <div>Loading...</div>}
+                {this.props.loading.loading &&  <div>Loading...</div>}
+                {this.props.loading.error && <span>{this.props.loading.error} error</span>}
                 {Users}
             </div>
         );
     }
 }
 const mapStoreToPros = (store) =>{
+    console.log(store);
+    
     return {
         a: store.users.a,
         users: store.users.users,
-        loading:store.users.loading
+        error: store.errorHandlerReducer,
+        loading:store.loading
     }
 }
 const mapDispatchToPros = (dispatch) =>{
