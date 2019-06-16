@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Footer from './template/Footer';
-import Nav from './template/Nav';
+import Footer from './components/layout/Footer';
+import Nav from './components/layout/Nav';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
 
