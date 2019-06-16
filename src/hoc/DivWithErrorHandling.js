@@ -3,7 +3,7 @@ const withErrorHandling = WrappedComponent => ({ loading, children }) => {
   return (
     <WrappedComponent>
       {loading.loading && <p>Loading....</p>}
-      {loading.error && <div className="error-message">Oops! Something went wrong!</div>}
+      {loading.error && <div className="text-danger"> Error code {loading.errorStatus}</div>}
       {children}
     </WrappedComponent>
   );
