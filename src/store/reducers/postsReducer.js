@@ -1,6 +1,7 @@
 const initialState = {
     posts: [],
     post: {},
+    error:null
   };
   const reducer = (state = initialState, action) => {
     // take the state and base on the action we will change the stage and return.
@@ -13,6 +14,12 @@ const initialState = {
           posts: action.payload,
           loading: false
         }
+      case 'ERROR': 
+       return {
+         ...state,
+         loading:false,
+         error: action.payload
+       }  
       case 'FETCH_ONE':
         return {
           ...state,

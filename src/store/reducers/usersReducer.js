@@ -1,5 +1,6 @@
 const initialState = {
   a: 21,
+  error:null,
   users: [],
   user: {},
 };

@@ -8,14 +8,19 @@ export const loading = () => {
 export const fetchAll = () =>{
     return dispatch => {
         dispatch(loading());
-        Axios.get(process.env.REACT_APP_BASE_URL + '/posts')
+        Axios.get(process.env.REACT_APP_BASE_URL + '/posts1')
         .then(res =>{
             dispatch({
                 type:'FETCH_ALL',
                 payload:res.data
             })
         })
-
+        .catch((err) =>{
+            dispatch({
+                type:'ERROR',
+                payload:err
+            })
+        })
     }
 }
 // get user detail.

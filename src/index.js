@@ -4,18 +4,11 @@ import './index.css';
 import App from './App';
 // redux
 import {Provider} from 'react-redux';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import usersReducer from './store/reducers/usersReducer';
-import postsReducer from './store/reducers/postsReducer';
+import {createStore, applyMiddleware} from 'redux';
+import reducer from './store/reducers';
 import thunk from 'redux-thunk';
-console.log(process.env.REACT_APP_BASE_URL,'API_URL');
-const reducers = combineReducers({
-    users:usersReducer,
-    posts:postsReducer,
-})
-console.log(reducers);
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
