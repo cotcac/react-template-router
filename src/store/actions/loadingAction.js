@@ -1,16 +1,17 @@
+import * as actionTypes from './actionTypes';
 export const loading = () => {
     return {
-        type: 'LOADING'
+        type: actionTypes.LOADING
     }
 }
 export const success = () => {
     return {
-        type: 'SUCCESS'
+        type: actionTypes.SUCCESS
     }
 }
 export const error = (err) =>{
     return {
-        type:'ERROR',
+        type: actionTypes.ERROR,
         payload:err
     }
     

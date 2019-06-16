@@ -9,9 +9,9 @@ class UserDefail extends Component {
 
     }
     render() {
-        if (this.props.loading.error) {
-            return <div><p>Something wrong!</p></div>;
-        }
+        if(this.props.loading.error){
+            return <div><p>Error {this.props.loading.errorStatus}</p></div>;
+      }
 
         return (
             <div>

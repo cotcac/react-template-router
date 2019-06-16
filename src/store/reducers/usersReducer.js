@@ -1,3 +1,4 @@
+import * as actionTypes from '../actions/actionTypes';
 const initialState = {
   a: 21,
   error:null,
@@ -9,17 +10,17 @@ const reducer = (state = initialState, action) => {
 
   // your action here
   switch (action.type) {
-    case 'FETCH_ALL':
+    case actionTypes.FETCH_ALL:
       return {
         ...state,
         users: action.payload,
       }
-    case 'FETCH_ONE':
+    case actionTypes.FETCH_ONE:
       return {
         ...state,
         user: action.payload,
       }
-    case 'INSERT':
+    case actionTypes.INSERT:
       return {
         ...state,
         user: action.payload,

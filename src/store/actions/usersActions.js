@@ -1,4 +1,5 @@
 import Axios from "axios";
+import * as actionTypes from './actionTypes';
 // import * as errorHandlerActions from './errorHandlerActions';
 import * as loadingAction from './loadingAction';
 export const ageUpAsync = (val) => {
@@ -14,7 +15,7 @@ export const fetchAll = () =>{
         Axios.get(process.env.REACT_APP_BASE_URL + '/users')
         .then(users =>{
             dispatch({
-                type:'FETCH_ALL',
+                type: actionTypes.FETCH_ALL,
                 payload:users.data
             })
             dispatch(loadingAction.success());
@@ -31,13 +32,13 @@ export const fetchOne = (id) =>{
         Axios.get(process.env.REACT_APP_BASE_URL + '/users/' + id)
         .then(users => {
             dispatch({
-                type:'FETCH_ONE',
+                type:actionTypes.FETCH_ONE,
                 payload: users.data
             })
             dispatch(loadingAction.success());
         })
         .catch(err =>{
-            dispatch(loadingAction.error(err));
+            dispatch(loadingAction.error(err.response.status));
         })
     }
 }
@@ -48,9 +49,13 @@ export const insert = (post) =>{
         Axios.post(process.env.REACT_APP_BASE_URL + '/users/', post)
         .then(users => {
             dispatch({
-                type:'INSERT',
+                type: actionTypes.INSERT,
                 payload: users.data
             })
+            dispatch(loadingAction.success());
+        })
+        .catch(err =>{
+            dispatch(loadingAction.error(err.response.status));
         })
     }
 }
@@ -62,11 +67,5 @@ export const ageUp = (val) => {
             dispatch(loadingAction.success());
         }, 4000);
         
-    }
-}
-export const ageDown = (val) => {
-    return {
-        type: 'AGE_DOWN',
-        val
     }
 }

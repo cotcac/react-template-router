@@ -19,7 +19,7 @@ class Posts extends Component {
         return (
             <div>
                 <h1>Posts</h1>
-                {this.props.loading &&  <div>Loading...</div>}
+                {this.props.loading.loading &&  <div>Loading...</div>}
                 {Posts}
             </div>
         );

@@ -1,5 +1,9 @@
-export const HTTP_404_ERROR = 'HTTP_404_ERROR';
-export const HTTP_500_ERROR = 'HTTP_500_ERROR';
-export const HTTP_OTHER_ERROR = 'HTTP_OTHER_ERROR';
 export const LOADING = 'LOADING';
+export const SUCCESS = 'SUCCESS';
 export const ERROR = 'ERROR';
+export const FETCH_ALL = 'FETCH_ALL';
+export const FETCH_ONE = 'FETCH_ONE';
+export const INSERT = 'INSERT';
+export const EDIT = 'EDIT';
+export const DELETE = 'DELETE';
+export const SEARCH = 'SEARCH';
