@@ -17,7 +17,7 @@ class Posts extends Component {
             </div>
         ))
         return (
-            <div>
+            <div className="col-md-12">
                 <h1>Posts</h1>
                 <DivWithErrorHandling loading={this.props.loading}>
                     {Posts}

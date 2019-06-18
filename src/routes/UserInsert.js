@@ -27,7 +27,7 @@ class UserInsert extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="col-md-12">
                <h1> Insert Users</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">

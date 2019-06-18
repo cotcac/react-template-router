@@ -9,7 +9,7 @@ class UserDefail extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="col-md-12">
                 <h1>Usaer Detail</h1>
                 <DivWithErrorHandling loading={this.props.loading}>
                     <h1>{this.props.user.name}</h1>
