@@ -2,3 +2,16 @@
     background-color: #ccc;
     color: #337ab7;
 }
+.navbar-reverse {
+    background-color:#003057;
+    border: black
+  }
+  .navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+  }
+  .navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-weight: bold;
+   
+  }
