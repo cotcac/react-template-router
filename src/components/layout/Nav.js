@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Nav.css';
 class Nav extends Component {
     render() {
         return (
             <nav className="navbar navbar-reverse">
-                <div className="container-fluid">
+                <div className="container">
+                    <div className="row">
                     <div className="navbar-header">
-                        <Link className="navbar-brand" to="/">CONTEMI</Link>
+                        <NavLink className="navbar-brand" to="/">CONTEMI</NavLink>
                     </div>
                     <ul className="nav navbar-nav">
-                        <li> <Link to="/about">About</Link> </li>
-                        <li> <Link to="/users">Users</Link> </li>
-                        <li> <Link to="/posts">Posts</Link> </li>
+                        <li> <NavLink activeClassName="current" to="/about">About</NavLink> </li>
+                        <li> <NavLink activeClassName="current" to="/users">Users</NavLink> </li>
+                        <li> <NavLink activeClassName="current" to="/posts">Posts</NavLink> </li>
                     </ul>
+                    </div>
                 </div>
             </nav>
         )
