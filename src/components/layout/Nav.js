@@ -16,15 +16,15 @@ class Nav extends Component {
                             <NavLink className="navbar-brand" to="/">CONTEMI</NavLink>
                         </div>
                         <div className="collapse navbar-collapse" id="myNavbar">
-                        <ul className="nav navbar-nav">
-                            <li> <NavLink activeClassName="current" to="/about">About</NavLink> </li>
-                            <li> <NavLink activeClassName="current" to="/users">Users</NavLink> </li>
-                            <li> <NavLink activeClassName="current" to="/posts">Posts</NavLink> </li>
-                        </ul>
-                        <ul className="nav navbar-nav navbar-right">
-                            <li><NavLink to="/sign-up"><span className="glyphicon glyphicon-user"></span> Sign Up</NavLink></li>
-                            <li><NavLink to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</NavLink></li>
-                        </ul>
+                            <ul className="nav navbar-nav">
+                                <li> <NavLink activeClassName="current" to="/about">About</NavLink> </li>
+                                <li> <NavLink activeClassName="current" to="/users">Users</NavLink> </li>
+                                <li> <NavLink activeClassName="current" to="/posts">Posts</NavLink> </li>
+                            </ul>
+                            <ul className="nav navbar-nav navbar-right">
+                                <li><NavLink to="/sign-up"><span className="glyphicon glyphicon-user"></span> Sign Up</NavLink></li>
+                                <li><NavLink to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</NavLink></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
