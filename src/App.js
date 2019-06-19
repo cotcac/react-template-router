@@ -4,7 +4,7 @@ import './App.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import NavDrawer from './components/NavDrawer';
+import NavDrawer from './components/layout/NavDrawer';
 const Users = lazy(() => import('./routes/Users'))
 const Posts = lazy(() => import('./routes/Posts'))
 const UserDefail = lazy(() => import('./routes/UserDefail'));
