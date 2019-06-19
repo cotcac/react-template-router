@@ -8,7 +8,6 @@ class Users extends Component {
     componentWillMount() {
         this.props.fetchAll()
     }
-
     render() {
         const Users = this.props.users.map(user => (
             <div key={user.id}>
@@ -27,9 +26,14 @@ class Users extends Component {
     }
 }
 const mapStoreToPros = (store) => {
+    console.log(store);
+    const loading = {
+        loading: store.users.loading,
+        error: store.users.error
+    }
     return {
         users: store.users.users,
-        loading: store.loading
+        loading:loading
     }
 }
 

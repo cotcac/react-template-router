@@ -1,18 +1,31 @@
-import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     posts: [],
-    post: {}
+    post: {},
+    loading:false,
+    error:null
   };
   const reducer = (state = initialState, action) => {
     // take the state and base on the action we will change the stage and return.
   
     // your action here
     switch (action.type) {
-      case actionTypes.FETCH_ALL:
+      case 'FETCH_POSTS_START':
         return {
           ...state,
-          posts: action.payload,
+          loading:true,
         }
+      case 'FETCH_POSTS_SUCCESS':
+        return {
+          ...state,
+          loading:false,
+          posts:action.payload
+        } 
+      case 'FETCH_POSTS_ERROR':
+        return {
+          ...state,
+          loading: false,
+          error: action.payload
+        }   
       default:
         return state;
     }

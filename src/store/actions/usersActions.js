@@ -4,15 +4,22 @@ import * as actionTypes from './actionTypes';
 import * as loadingAction from './loadingAction';
 export const fetchAll = () =>{
     return dispatch => {
-        dispatch(loadingAction.loading());
-        Axios.get(process.env.REACT_APP_BASE_URL + '/users')
-        .then(users =>{
-            dispatch({
-                type: actionTypes.FETCH_ALL,
-                payload:users.data
+        dispatch({type:'FETCH_USERS_START'});
+        setTimeout(() =>{
+            Axios.get(process.env.REACT_APP_BASE_URL + '/users')
+            .then(users =>{
+                dispatch({
+                    type: 'FETCH_USERS_SUCCESS',
+                    payload:users.data
+                })
             })
-            dispatch(loadingAction.success());
-        })
+            .catch((err)=>{
+                dispatch({type:'FETCH_USERS_ERROR',payload:err.response.status});    
+            })
+
+        },5000) 
+
+      
 
     }
 }

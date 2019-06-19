@@ -1,19 +1,16 @@
 import axios from "axios";
-import * as loadingAction from './loadingAction';
-import * as actionTypes from './actionTypes';
 export const fetchAll = () =>{
     return dispatch => {
-        dispatch(loadingAction.loading());
+        dispatch({type:'FETCH_POSTS_START'});
         axios.get(process.env.REACT_APP_BASE_URL + '/posts')
         .then(res =>{
             dispatch({
-                type: actionTypes.FETCH_ALL,
+                type: 'FETCH_POSTS_SUCCESS',
                 payload:res.data
             })
-            dispatch(loadingAction.success());
         })
         .catch((err) =>{
-            dispatch(loadingAction.error(err.response.status));
+            dispatch({type:'FETCH_POSTS_ERROR', payload:err.response.status});
         })
     }
 }

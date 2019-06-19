@@ -27,9 +27,13 @@ class Posts extends Component {
     }
 }
 const mapStoreToPros = (store) => {
+    const loading = {
+        loading: store.posts.loading,
+        error: store.posts.error
+    }
     return {
         posts: store.posts,
-        loading: store.loading,
+        loading: loading,
     }
 }
 export default connect(mapStoreToPros, { fetchAll })(Posts);
