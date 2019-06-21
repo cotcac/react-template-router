@@ -18,7 +18,7 @@ class NavDrawer extends Component {
     render() {
         return (
             <div>
-                <AppBar position="fixed" color="primary" onClick={this.toggle} title="Contemi" />
+                <AppBar position="fixed" color="primary" onClick={this.toggle} title="LOGO" />
                 <Drawer open={this.state.open}>
 
                     <Divider />
