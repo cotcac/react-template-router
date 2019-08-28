@@ -14,3 +14,9 @@ footer{
 header{
   padding: 5px 10px;
 }
+.App {
+  padding-top: 105px; 
+}
+.navbar {
+  border-radius: 0px;
+}
