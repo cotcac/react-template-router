@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar'
 class NavDrawer extends Component {
     state = {
-        open: false
+        open: true
     }
     
 
@@ -22,28 +22,28 @@ class NavDrawer extends Component {
                 <Drawer open={this.state.open}>
 
                     <Divider />
-                    <AppBar onClick={this.toggle} title="Contemi" />
+                    <AppBar   onClick={this.toggle} title="LODE" />
                     <NavLink to="/">
                         <MenuItem
-                            onClick={this.toggle}
-                            primaryText={'CONTEMI'}
+                      
+                            primaryText={'LODE'}
                         />
                     </NavLink>
                     <NavLink to="/about">
                         <MenuItem
-                            onClick={this.toggle}
+                        
                             primaryText={'About'}
                         />
                     </NavLink>
                     <NavLink to="/users">
                         <MenuItem
-                            onClick={this.toggle}
+                         
                             primaryText={'Users'}
                         />
                     </NavLink>
                     <NavLink to="/posts">
                         <MenuItem
-                            onClick={this.toggle}
+                          
                             primaryText={'Posts'}
                         />
                     </NavLink>
