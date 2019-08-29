@@ -57,3 +57,20 @@ export const insert = (post) =>{
         })
     }
 }
+// LOGIN 
+export const login =(post) =>{
+    return dispatch => {
+        dispatch(loadingAction.loading());
+        Axios.post(process.env.REACT_APP_BASE_URL + '/users/', post)
+        .then(users => {
+            dispatch({
+                type: actionTypes.LOGIN,
+                payload: users.data
+            })
+            dispatch(loadingAction.success());
+        })
+        .catch(err =>{
+            dispatch(loadingAction.error(err.response.status));
+        })
+    }
+}

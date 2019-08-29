@@ -8,3 +8,4 @@ export const INSERT = 'INSERT';
 export const EDIT = 'EDIT';
 export const DELETE = 'DELETE';
 export const SEARCH = 'SEARCH';
+export const LOGIN ='LOGIN';
